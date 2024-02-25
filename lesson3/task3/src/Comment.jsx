@@ -6,12 +6,12 @@ import './comment.scss'
 
 const formatDate = date => moment(date).format('DD MMM YYYY')
 
-function Comment(props) {
+const Comment = ({ author, text, date }) => {
 	return (
 		<div className='comment'>
-			<UserInfo user={props.author} />
-			<div className='comment__text'>{props.text}</div>
-			<div className='comment__date'>{formatDate(props.date)}</div>
+			<UserInfo user={author} />
+			<div className='comment__text'>{text}</div>
+			<div className='comment__date'>{formatDate(date)}</div>
 		</div>
 	)
 }
