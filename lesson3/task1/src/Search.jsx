@@ -1,5 +1,6 @@
 import React from 'react'
 import './search.scss'
+
 const Search = props => {
 	return (
 		<div className='search'>
