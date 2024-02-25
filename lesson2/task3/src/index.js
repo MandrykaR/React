@@ -12,7 +12,7 @@ const renderSeconds = time => {
 
 	const styles = {
 		color: textColor,
-		backgroundColor,
+		backgroundColor, 
 	}
 
 	const elem = (
