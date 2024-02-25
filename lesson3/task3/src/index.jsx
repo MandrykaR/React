@@ -1,4 +1,4 @@
-import './comment.scss'
+
 import './index.scss'
 
 import React from 'react'
