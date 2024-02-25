@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './search.scss' 
+
 import Search from './Search.jsx'
-import './index.scss'
 
 ReactDOM.render(<Search name='Tom' />, document.getElementById('root'))
