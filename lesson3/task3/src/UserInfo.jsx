@@ -1,7 +1,7 @@
 import React from 'react'
 import Avatar from './Avatar.jsx'
 
-const UserInfo = props => {
+function UserInfo(props) {
 	return (
 		<div className='user-info'>
 			<Avatar avatarUrl={props.user.avatarUrl} name={props.user.name} />

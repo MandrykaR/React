@@ -7,7 +7,7 @@ const user = {
 		'https://avatars.githubusercontent.com/u/105412372?s=400&u=4cb26424388c0fb490a97a8d3aa1f1dc8a31d668&v=4',
 }
 
-const App = () => {
+function App() {
 	return <Comment user={user} text='Good job!' date={new Date()} />
 }
 

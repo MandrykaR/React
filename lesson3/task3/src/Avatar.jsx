@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Avatar = props => {
+function Avatar(props) {
 	return <img className='avatar' src={props.avatarUrl} alt={props.name} />
 }
 
