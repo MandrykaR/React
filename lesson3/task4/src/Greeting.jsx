@@ -16,11 +16,11 @@ const Greeting = props => {
 		return age
 	}
 
-	const age = calculateAge(props.birthDate)
+	const birthDate = calculateAge(props.birthDate)
 
 	return (
 		<div className='greeting'>
-			My name is {props.name} {props.lastName}. I am {age} years old
+			My name is {props.firstName} {props.lastName}. I am {birthDate} years old
 		</div>
 	)
 }
