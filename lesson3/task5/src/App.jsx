@@ -10,7 +10,7 @@ const userData = {
 }
 
 const App = () => {
-	return <Profile user={userData} />
+	return <Profile userData={userData} />
 }
 
 export default App
