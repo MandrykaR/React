@@ -20,15 +20,15 @@ class Colors extends Component {
 				<button
 					className='colors__button'
 					onClick={() => this.onSwitchColor('red')}
-				></button>
+				>RED</button>
 				<button
 					className='colors__button'
 					onClick={() => this.onSwitchColor('green')}
-				></button>
+				>GREEN</button>
 				<button
 					className='colors__button'
 					onClick={() => this.onSwitchColor('blue')}
-				></button>
+				>BLUE</button>
 			</div>
 		)
 	}
