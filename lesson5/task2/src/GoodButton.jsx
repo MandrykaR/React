@@ -10,10 +10,12 @@ class GoodButton extends React.Component {
 	}
 
 	render() {
-		return <button class="fancy-button" onClick={this.handleClick}>Click me!</button>
+		return (
+			<button className='fancy-button' onClick={this.handleClick}>
+				Click me!
+			</button>
+		)
 	}
 }
-
-
 
 export default GoodButton
