@@ -28,7 +28,8 @@ class Auth extends React.Component {
 		return (
 			<div className='panel'>
 				<Greeting isLoggedIn={this.state.isLoggedIn} />
-				{<Logout onLogout={this.state.onLogout} /> ? <Login onLogin ={this.state.onLogin}/> : <Logout onLogout={this.state.onLogout}/>}
+				
+				{this.state.isLoggedIn ? <Logout onLogout={this.onLogout} /> : <Login onLogin ={this.onLogin}/>}
 			</div>
 		)
 	}
