@@ -6,12 +6,12 @@ const text2 = 'Price is 650$. Not available in 1 color'
 
 class Page extends React.Component {
 	state = {
-		text: null,
+		info: null,
 	}
 
-	setText = text => {
+	setText = info => {
 		this.setState({
-			text,
+			info,
 		})
 	}
 
@@ -19,7 +19,7 @@ class Page extends React.Component {
 		return (
 			<div className='page'>
 				<div className='text'>
-					<Info text={this.state.text} />
+					<Info info={this.state.info} />
 				</div>
 				<div className='actions'>
 					<button className='btn' onClick={() => this.setText(text1)}>
