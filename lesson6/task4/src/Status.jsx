@@ -20,11 +20,7 @@ class Status extends React.Component {
 	render() {
 		return (
 			<div className='status'>
-				{this.props.isOnline ? (
-					<Online />
-				) : (
-					<Offline onReconnect={this.statusSwitcher} />
-				)}
+				{this.props.isOnline ? (<Online />) : (<Offline onReconnect={this.statusSwitcher} />)}
 			</div>
 		)
 	}
