@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import UserList from './UserList.jsx'
+import UsersList from './UsersList.jsx'
 
 import './index.scss'
 
@@ -27,4 +27,4 @@ const users = [
 	},
 ]
 
-ReactDOM.render(<UserList users={users} />, document.getElementById('root'))
+ReactDOM.render(<UsersList users={users} />, document.getElementById('root'))
