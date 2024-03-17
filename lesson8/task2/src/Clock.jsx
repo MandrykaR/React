@@ -11,15 +11,22 @@ class Clock extends Component {
 	}
 
 	componentDidMount() {
-		this.interval = setInterval(() => {
-			this.setState(prevState => ({
-				offset: new Date(prevState.offset.getTime() + 1000),
-			}))
-		}, 1000)
+		this.updateOffset()
 	}
 
 	componentWillUnmount() {
-		clearInterval(this.interval)
+		clearTimeout(this.timerID)
+	}
+
+	updateOffset = () => {
+		this.setState(
+			prevState => ({
+				offset: new Date(prevState.offset.getTime() + 1000),
+			}),
+			() => {
+				this.timerID = setTimeout(this.updateOffset, 1000) 
+			}
+		)
 	}
 
 	render() {
