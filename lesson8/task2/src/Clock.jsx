@@ -5,7 +5,7 @@ class Clock extends Component {
 		super(props)
 
 		this.state = {
-			offset: new Date(new Date().getTime() + props.offset * 3600000),
+			offset: this.calculateOffset(),
 			location: props.location,
 		}
 	}
@@ -15,7 +15,15 @@ class Clock extends Component {
 	}
 
 	componentWillUnmount() {
-		clearTimeout(this.timerID)
+		clearTimeout(this.interval)
+	}
+
+	calculateOffset = () => {
+		const now = new Date()
+		const utcOffset = now.getTimezoneOffset() / 60
+		const plOffset = 1
+
+		return new Date(now.getTime() + (utcOffset + plOffset) * 3600000)
 	}
 
 	updateOffset = () => {
@@ -24,7 +32,7 @@ class Clock extends Component {
 				offset: new Date(prevState.offset.getTime() + 1000),
 			}),
 			() => {
-				this.timerID = setTimeout(this.updateOffset, 1000) 
+				this.interval = setTimeout(this.updateOffset, 1000)
 			}
 		)
 	}
