@@ -11,7 +11,7 @@ class Clock extends Component {
 	}
 
 	componentDidMount() {
-		this.interval = setTimeout(() => {
+		this.interval = setInterval(() => {
 			this.setState(prevState => ({
 				offset: new Date(prevState.offset.getTime() + 1000),
 			}))
@@ -19,7 +19,7 @@ class Clock extends Component {
 	}
 
 	componentWillUnmount() {
-		clearTimeout(this.interval)
+		clearInterval(this.interval)
 	}
 
 	render() {
