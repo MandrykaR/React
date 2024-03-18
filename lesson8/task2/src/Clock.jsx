@@ -23,6 +23,8 @@ class Clock extends Component {
 		const utcTime = localTime.getTime() + localTime.getTimezoneOffset() * 60000
 		const plTime = new Date(utcTime + 3600000 * offset)
 
+		plTime.setHours(plTime.getHours() + 1)
+
 		this.setState({
 			offsetTime: plTime,
 		})
