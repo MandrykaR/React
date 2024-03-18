@@ -12,7 +12,7 @@ class Search extends React.Component {
 	}
 
 	handleSubmit = e => {
-		alert('Search text:' + this.state.value)
+		alert('Search text: ' + this.state.value)
 		e.preventDefault()
 	}
 
