@@ -53,19 +53,19 @@ class UserForm extends React.Component {
 						type='checkbox'
 						id='student'
 						name='student'
-						value={this.state.student}
+						checked={this.state.student}
 						onChange={this.handleChange}
 					/>
 				</div>
 
 				<div className='form-control'>
-					<label className='form-label' id='occupation' htmlFor='occupation'>
+					<label className='form-label' htmlFor='occupation'>
 						Occupation
 					</label>
 					<select
-						value={this.state.occupation}
-						name='occupation'
 						className='form-input'
+						name='occupation'
+						value={this.state.occupation}
 						onChange={this.handleChange}
 					>
 						<option value='london'>London</option>
@@ -76,15 +76,15 @@ class UserForm extends React.Component {
 				</div>
 
 				<div className='form-control'>
-					<label className='form-label' occupation id='about' htmlFor='about'>
+					<label className='form-label' htmlFor='about'>
 						About
 					</label>
 					<textarea
-						value={this.state.about}
-						name='about'
 						className='form-input'
+						name='about'
+						value={this.state.about}
 						onChange={this.handleChange}
-					/>
+					></textarea>
 				</div>
 
 				<button className='submit-button' type='submit'>
