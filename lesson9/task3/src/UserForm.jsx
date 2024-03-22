@@ -4,7 +4,7 @@ class UserForm extends React.Component {
 	handleSubmit = e => {
 		e.preventDefault()
 
-		const formData = [...new FormData(this.fromRef)].reduce(
+		const formData = [...new FormData(this.formRef)].reduce(
 			(acc, [name, value]) => ({ ...acc, [name]: value }),
 			{}
 		)
@@ -13,7 +13,7 @@ class UserForm extends React.Component {
 	}
 
 	setRef = node => {
-		this.fromRef = node
+		this.formRef = node
 	}
 
 	render() {
