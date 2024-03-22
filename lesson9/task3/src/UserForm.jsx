@@ -8,11 +8,14 @@ class UserForm extends React.Component {
 
 	handleSubmit = e => {
 		e.preventDefault()
+
 		const formData = new FormData(this.formRef.current)
 		const userData = {}
+
 		formData.forEach((value, key) => {
 			userData[key] = value
 		})
+
 		this.props.onSubmit(userData)
 	}
 
