@@ -4,12 +4,13 @@ class UserForm extends React.Component {
 	handleSubmit = e => {
 		e.preventDefault()
 
-		const formData = [...new FormData(this.formRef)].reduce(
-			(acc, [name, value]) => ({ ...acc, [name]: value }),
-			{}
-		)
+		const formData = new FormData(this.formRef)
+		const formDataObject = {}
+		formData.forEach((value, key) => {
+			formDataObject[key] = value
+		})
 
-		console.log(formData)
+		console.log(formDataObject)
 	}
 
 	setRef = node => {
