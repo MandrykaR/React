@@ -1,7 +1,7 @@
 import React from 'react'
 
 class UserForm extends React.Component {
-	handleSubmit = e => {
+	onSubmit = e => {
 		e.preventDefault()
 
 		const formData = new FormData(this.formRef)
@@ -19,11 +19,7 @@ class UserForm extends React.Component {
 
 	render() {
 		return (
-			<form
-				ref={this.setRef}
-				onSubmit={this.handleSubmit}
-				className='login-form'
-			>
+			<form ref={this.setRef} onSubmit={this.onSubmit} className='login-form'>
 				<h1 className='form-title'>Profile</h1>
 
 				<div className='form-control'>
