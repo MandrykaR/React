@@ -1,20 +1,16 @@
 import React from 'react'
 
 class UserForm extends React.Component {
+	formRef = React.createRef()
+
 	handleSubmit = e => {
 		e.preventDefault()
-
-		const formData = new FormData(this.formRef)
+		const formData = new FormData(this.formRef.current)
 		const formDataObject = {}
 		formData.forEach((value, key) => {
 			formDataObject[key] = value
 		})
-
 		this.props.onSubmit(formDataObject)
-	}
-
-	setRef = node => {
-		this.formRef = node
 	}
 
 	render() {
