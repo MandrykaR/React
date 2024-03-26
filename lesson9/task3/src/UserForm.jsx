@@ -60,9 +60,8 @@ class UserForm extends React.Component {
 					<label className='form-label' htmlFor='about'>
 						About
 					</label>
-					<textarea className='form-input' name='about'></textarea>
+					<textarea className='form-input' name='about' />
 				</div>
-
 				<button className='submit-button' type='submit'>
 					Submit
 				</button>
