@@ -9,8 +9,11 @@ class UsersList extends React.Component {
 		this.state = {
 			filter: '',
 			users: [
-				{ id: 1, name: 'Stas', age: 12 },
-				{ id: 2, name: 'Bob', age: 34 },
+				{ id: 1, name: 'John', age: 25 },
+				{ id: 2, name: 'Alice', age: 30 },
+				{ id: 3, name: 'Bob', age: 35 },
+				{ id: 4, name: 'Charlie', age: 40 },
+				{ id: 5, name: 'Diana', age: 45 },
 			],
 		}
 	}
@@ -35,7 +38,7 @@ class UsersList extends React.Component {
 					count={filteredUsers.length}
 					onChange={this.handleFilterChange}
 				/>
-				<ul class='users'>
+				<ul className='users'>
 					{filteredUsers.map(user => (
 						<User key={user.id} name={user.name} age={user.age} />
 					))}
