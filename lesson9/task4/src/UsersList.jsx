@@ -8,13 +8,6 @@ class UsersList extends React.Component {
 
 		this.state = {
 			filter: '',
-			users: [
-				{ id: 1, name: 'John', age: 25 },
-				{ id: 2, name: 'Alice', age: 30 },
-				{ id: 3, name: 'Bob', age: 35 },
-				{ id: 4, name: 'Charlie', age: 40 },
-				{ id: 5, name: 'Diana', age: 45 },
-			],
 		}
 	}
 
@@ -25,7 +18,8 @@ class UsersList extends React.Component {
 	}
 
 	render() {
-		const { filter, users } = this.state
+		const { filter } = this.state
+		const { users } = this.props
 
 		const filteredUsers = users.filter(user =>
 			user.name.toLowerCase().includes(filter.toLowerCase())
