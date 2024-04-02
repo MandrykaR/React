@@ -2,16 +2,20 @@ import React from 'react'
 
 class UserProfile extends React.Component {
 	render() {
-		if (!this.props.userData) {
+		const { userData } = this.props
+
+		if (!userData) {
 			return null
 		}
-		const { name, location, avatar_url } = this.props.userData
+
+		const { name, location, avatar_url } = userData
+
 		return (
-			<div class='user'>
-				<img alt='User Avatar' src={avatar_url} class='user__avatar' />
-				<div class='user__info'>
-					<span class='user__name'>{name}</span>
-					<span class='user__location'>{location}</span>
+			<div className='user'>
+				<img alt='User Avatar' src={avatar_url} className='user__avatar' />
+				<div className='user__info'>
+					<span className='user__name'>{name}</span>
+					<span className='user__location'>{location}</span>
 				</div>
 			</div>
 		)
