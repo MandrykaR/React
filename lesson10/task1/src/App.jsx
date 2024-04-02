@@ -8,11 +8,12 @@ class Page extends React.Component {
 	}
 
 	componentDidMount() {
-		this.fetchUserData(this.props.userId)
+		const { userId } = this.props
+		this.fetchUserData(userId)
 	}
 
 	fetchUserData = userId => {
-		const userUrl = `http://api.github.com/users/${userId}`
+		const userUrl = `https://api.github.com/users/${userId}`
 		fetch(userUrl)
 			.then(res => res.json())
 			.then(userData => {
@@ -23,12 +24,14 @@ class Page extends React.Component {
 	}
 
 	render() {
+		const { userData } = this.state
+
 		return (
 			<div className='page'>
-				<header class='header'>
-					<UserMenu userData={this.state.userData} />
+				<header className='header'>
+					<UserMenu userData={userData} />
 				</header>
-				<UserProfile userData={this.state.userData} />
+				<UserProfile userData={userData} />
 			</div>
 		)
 	}
