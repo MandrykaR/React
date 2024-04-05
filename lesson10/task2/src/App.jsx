@@ -23,9 +23,9 @@ class Page extends React.Component {
 	render() {
 		const { firstName, lastName } = this.state.userData
 		return (
-			<div class='page'>
-				<h1 class='title'>{`Hello, ${firstName} ${lastName}`}</h1>
-				<main class='content'>
+			<div className='page'>
+				<h1 className='title'>{`Hello, ${firstName} ${lastName}`}</h1>
+				<main className='content'>
 					<ShoppingCart userData={this.state.userData} />
 					<Profile
 						userData={this.state.userData}
