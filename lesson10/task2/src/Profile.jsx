@@ -1,5 +1,5 @@
 import React from 'react'
-import UserForm from './userForm.jsx'
+import UserForm from './UserForm.jsx'
 
 const Profile = ({ userData, handleChange }) => {
 	return (
