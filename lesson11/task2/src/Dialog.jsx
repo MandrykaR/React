@@ -14,9 +14,7 @@ const Dialog = ({ isOpen, children, title, onClose }) => {
 					+
 				</button>
 			</div>
-			<div className='dialog__content'>
-				<p>{children}</p>
-			</div>
+			<div className='dialog__content'>{children}</div>
 		</div>
 	)
 }
