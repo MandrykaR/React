@@ -1,6 +1,5 @@
 import React from 'react'
 import Dialog from './Dialog.jsx'
-import PropTypes from 'prop-types';
 
 class App extends React.Component {
 	state = {
@@ -9,22 +8,27 @@ class App extends React.Component {
 
 	hideDialog = () => {
 		this.setState({
-			isOpen: false
+			isOpen: false,
 		})
 	}
 
-
 	showDialog = () => {
 		this.setState({
-			isOpen: true
+			isOpen: true,
 		})
 	}
 
 	render() {
 		return (
-			<div className="app">
-				<button onClick={this.showDialog}  className="btn">Show dialog</button>
-				<Dialog isOpen={this.state.isOpen} onClose={this.hideDialog} title="some text">
+			<div className='app'>
+				<button onClick={this.showDialog} className='btn'>
+					Show dialog
+				</button>
+				<Dialog
+					isOpen={this.state.isOpen}
+					onClose={this.hideDialog}
+					title='some text'
+				>
 					<p>Some text</p>
 				</Dialog>
 			</div>
