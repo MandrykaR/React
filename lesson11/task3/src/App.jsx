@@ -16,9 +16,9 @@ class App extends React.Component {
 		return (
 			<div className='app'>
 				<Expand
+					title='Some title'
 					isOpen={this.state.isOpen}
 					toggleExpand={this.toggleExpand}
-					title='Some title'
 				>
 					<p>
 						Hooks are a new addition in React 16.8. They let you use state and
