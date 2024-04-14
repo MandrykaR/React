@@ -7,7 +7,7 @@ const Expand = ({ title, children, isOpen, toggleExpand }) => {
 				<span className='expand__title'>{title}</span>
 				<button onClick={toggleExpand} className='expand__toggle-btn'>
 					<i
-						className={`fa-solid ${isOpen ? 'fa-arrow-down' : 'fa-arrow-up'}`}
+						className={`fa-solid ${isOpen ? 'fa-arrow-up' : 'fa-arrow-down'}`}
 					></i>
 				</button>
 			</div>
