@@ -53,10 +53,10 @@ class TasksList extends React.Component {
 	}
 
 	handleTaskStatusChange = id => {
-		const taskToUpdate = this.state.tasks.find(task => task.id === id)
+		const { text, done } = this.state.tasks.find(task => task.id === id)
 		const updatedTask = {
-			...taskToUpdate,
-			done: !taskToUpdate.done,
+			text,
+			done: !done,
 		}
 
 		fetch(`${baseUrl}/${id}`, {
