@@ -40,7 +40,7 @@ class TasksList extends React.Component {
 		fetch(baseUrl, {
 			method: 'POST',
 			headers: {
-				'Content-Type': 'application/json; utc-8',
+				'Content-Type': 'application/json;charset=utf-8',
 			},
 			body: JSON.stringify(newTask),
 		}).then(response => {
@@ -62,7 +62,7 @@ class TasksList extends React.Component {
 		fetch(`${baseUrl}/${id}`, {
 			method: 'PUT',
 			headers: {
-				'Content-Type': 'application/json; utc-8',
+				'Content-Type': 'application/json;charset=utf-8',
 			},
 			body: JSON.stringify(updatedTask),
 		}).then(response => {
