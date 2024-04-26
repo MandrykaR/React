@@ -9,17 +9,17 @@ const Products = ({ match }) => {
 			<h1>Products</h1>
 			<ul className='navigation'>
 				<li className='navigation__item'>
-					<Link to={`${match.url}/:ball`}>Ball</Link>
+					<Link to={`${match.url}/ball`}>Ball</Link>
 				</li>
 				<li className='navigation__item'>
-					<Link to={`${match.url}/:book`}>Book</Link>
+					<Link to={`${match.url}/book`}>Book</Link>
 				</li>
 			</ul>
 			<Switch>
+				<Route path={`${match.url}/:productId`} component={Product} />
 				<Route exact path={match.url}>
 					<span>Select a product please</span>
 				</Route>
-				<Route path={`${match.url}/:productId`} component={Product} />
 			</Switch>
 		</div>
 	)
