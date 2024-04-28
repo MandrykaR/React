@@ -1,27 +1,27 @@
 import React from 'react'
-import { BrowserRouter, Link, Route } from 'react-router-dom'
-
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
 import Home from './Home.jsx'
-import Products from './Products.jsx'
+import Users from './Users.jsx'
 
 const App = () => {
 	return (
-		<div className='page'>
-			<BrowserRouter>
+		<Router>
+			<div className='page'>
 				<ul className='navigation'>
 					<li className='navigation__item'>
 						<Link to='/'>Home</Link>
 					</li>
 					<li className='navigation__item'>
-						<Link to='/products'>Products</Link>
+						<Link to='/users'>Users</Link>
 					</li>
 				</ul>
-				<Route exact path='/'>
-					<Home />
-				</Route>
-				<Route path='/products' component={Products} />
-			</BrowserRouter>
-		</div>
+
+				<Switch>
+					<Route exact path='/' component={Home} />
+					<Route path='/users' component={Users} />
+				</Switch>
+			</div>
+		</Router>
 	)
 }
 
