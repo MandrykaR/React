@@ -1,6 +1,6 @@
 import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
-import App from './App.jsx'
+import App from './Counter.jsx'
 
 import './index.scss'
 
