@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-class ConnectionStatus extends React.Component {
+class ConnectionStatus extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -9,21 +9,17 @@ class ConnectionStatus extends React.Component {
 	}
 
 	componentDidMount() {
-		const handleOnlineStatusChange = () => {
-			this.setState({ isOnline: navigator.onLine })
-		}
-
-		window.addEventListener('online', handleOnlineStatusChange)
-		window.addEventListener('offline', handleOnlineStatusChange)
-
-		this.cleanup = () => {
-			window.removeEventListener('online', handleOnlineStatusChange)
-			window.removeEventListener('offline', handleOnlineStatusChange)
-		}
+		window.addEventListener('online', this.handleOnlineStatusChange)
+		window.addEventListener('offline', this.handleOnlineStatusChange)
 	}
 
 	componentWillUnmount() {
-		this.cleanup()
+		window.removeEventListener('online', this.handleOnlineStatusChange)
+		window.removeEventListener('offline', this.handleOnlineStatusChange)
+	}
+
+	handleOnlineStatusChange = () => {
+		this.setState({ isOnline: navigator.onLine })
 	}
 
 	render() {
