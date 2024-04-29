@@ -17,7 +17,7 @@ const ConnectionStatus = () => {
 	}, [])
 
 	return (
-		<div className={`${!isOnline && 'status_offline'}}`}>
+		<div className={`status ${!isOnline && 'status_offline'}`}>
 			{isOnline ? 'online' : 'offline'}
 		</div>
 	)
