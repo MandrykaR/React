@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from 'react'
 
 const ConnectionStatus = () => {
-	const [isOnline, setIsOnline] = useState(navigator.onLine)
+	const [isOnline, setIsOnline] = useState(true)
 
 	useEffect(() => {
-		const handleOnline = () => {
-			setIsOnline(navigator.onLine)
-		}
+		const offlineToggle = () => setIsOnline(false)
+		const onlineToggle = () => setIsOnline(true)
 
-		window.addEventListener('online', handleOnline)
-		window.addEventListener('offline', handleOnline)
+		window.addEventListener('online', onlineToggle)
+		window.addEventListener('offline', offlineToggle)
 
 		return () => {
-			window.removeEventListener('online', handleOnline)
-			window.removeEventListener('offline', handleOnline)
+			window.removeEventListener('online', onlineToggle)
+			window.removeEventListener('offline', onlineToggle)
 		}
 	}, [])
 
 	return (
-		<div className={`status ${isOnline ? '' : 'status_offline'}`}>
+		<div className={`${!isOnline && 'status_offline'}}`}>
 			{isOnline ? 'online' : 'offline'}
 		</div>
 	)
