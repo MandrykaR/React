@@ -1,31 +1,42 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
-const ConnectionStatus = () => {
-	const [isOnline, setIsOnline] = useState(navigator.onLine)
+class ConnectionStatus extends React.Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			isOnline: navigator.onLine,
+		}
+	}
 
-	useEffect(() => {
-		const handleOnline = () => {
-			setIsOnline(navigator.onLine)
+	componentDidMount() {
+		const handleOnlineStatusChange = () => {
+			this.setState({ isOnline: navigator.onLine })
 		}
 
-		window.addEventListener('online', handleOnline)
-		window.addEventListener('offline', handleOnline)
+		window.addEventListener('online', handleOnlineStatusChange)
+		window.addEventListener('offline', handleOnlineStatusChange)
 
-		return () => {
-			window.removeEventListener('online', handleOnline)
-			window.removeEventListener('offline', handleOnline)
+		this.cleanup = () => {
+			window.removeEventListener('online', handleOnlineStatusChange)
+			window.removeEventListener('offline', handleOnlineStatusChange)
 		}
-	}, [])
+	}
 
-	return (
-		<div>
-			{isOnline ? (
-				<div class='status'>Online</div>
-			) : (
-				<div class='status status_offline'>Offline</div>
-			)}
-		</div>
-	)
+	componentWillUnmount() {
+		this.cleanup()
+	}
+
+	render() {
+		return (
+			<div>
+				{this.state.isOnline ? (
+					<div class='status'>Online</div>
+				) : (
+					<div class='status status_offline'>Offline</div>
+				)}
+			</div>
+		)
+	}
 }
 
 export default ConnectionStatus
